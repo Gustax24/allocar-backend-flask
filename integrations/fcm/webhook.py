@@ -1,0 +1,1 @@
+# FCM ne pousse pas de webhook à consommer ici ; placeholder.

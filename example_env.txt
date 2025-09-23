@@ -1,0 +1,88 @@
+# --- App ---
+APP_NAME=allocar
+APP_ENV=local
+FLASK_ENV=development
+DEBUG=1
+SECRET_KEY=dev-secret-change-me
+JWT_SECRET_KEY=dev-jwt-secret-change-me
+# Durées (en minutes) optionnelles
+JWT_ACCESS_EXPIRES=60
+JWT_REFRESH_EXPIRES=43200
+
+# --- API (CORS) ---
+CORS_ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173,http://127.0.0.1:3000
+
+# --- Base de données ---
+# Exemple Postgres local
+DATABASE_URL=postgresql+psycopg2://allocar:allocar@localhost:5432/allocar_local
+
+# --- Redis / Celery ---
+REDIS_URL=redis://localhost:6379/0
+CELERY_BROKER_URL=redis://localhost:6379/1
+CELERY_RESULT_BACKEND=redis://localhost:6379/2
+# (optionnel) file d’événements Socket.IO si tu l’utilises via Redis
+SOCKETIO_MESSAGE_QUEUE=redis://localhost:6379/5
+
+# --- OTP / templates (facultatif, fichiers par défaut sinon) ---
+OTP_EMAIL_TEMPLATE=templates/email/otp.html
+RESET_EMAIL_TEMPLATE=templates/email/reset_otp.html
+
+# --- Mail (SMTP) ---
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+EMAIL_HOST_USER=
+EMAIL_HOST_PASSWORD=
+MAIL_FROM=
+
+# --- S3 / MinIO (upload photo de profil & KYC) ---
+AWS_ACCESS_KEY_ID=minio
+AWS_SECRET_ACCESS_KEY=minio123
+AWS_DEFAULT_REGION=us-east-1
+S3_BUCKET=allocar-local
+# Pour MinIO local, sinon commente cette ligne
+S3_ENDPOINT_URL=http://localhost:9000
+
+# --- Intégrations Paiement ---
+# Stripe (CARTE). Si vide, le client passe en mock.
+STRIPE_SECRET_KEY=
+# Recommandé si tu valides la signature du webhook
+STRIPE_WEBHOOK_SECRET=
+
+# Wave
+WAVE_BASE_URL=https://api.wave.com/v1
+WAVE_API_KEY=
+WAVE_WEBHOOK_SECRET=dev_secret
+
+# Orange Money (si présent dans ton repo)
+ORANGE_BASE_URL=https://api.orange.com
+ORANGE_API_KEY=
+ORANGE_API_SECRET=
+ORANGE_WEBHOOK_SECRET=dev_secret
+
+# MTN MoMo
+MTN_BASE_URL=https://sandbox.momodeveloper.mtn.com
+MTN_API_KEY=
+MTN_SECRET=dev_secret
+
+# --- Cartographie / Itinéraires ---
+# OSRM public par défaut (pas de clé)
+OSRM_BASE_URL=http://router.project-osrm.org
+# Mapbox (si vide -> l’adapter mapbox bascule en erreur et l’adapter OSRM fera fallback)
+MAPBOX_TOKEN=
+
+# --- Push (FCM) ---
+FCM_SERVER_KEY=
+
+# --- SMS (dépend de ton SMSClient) ---
+
+# L’implémentation .client n’est pas dans l’extrait, mets les clés attendues par ton provider
+SMS_PROVIDER=mock
+SMS_API_KEY=
+SMS_SENDER_ID=AlloCar
+
+# --- Observabilité (facultatif) ---
+SENTRY_DSN=
+LOG_LEVEL=INFO
+
+
+REQUIRE_VERIF_FOR_LOGIN=True

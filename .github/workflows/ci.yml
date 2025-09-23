@@ -1,0 +1,44 @@
+name: ci
+on:
+  push: { branches: [ main ] }
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_DB: allocar
+          POSTGRES_USER: allocar
+          POSTGRES_PASSWORD: allocar
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+      redis:
+        image: redis:7
+        ports: ['6379:6379']
+    env:
+      FLASK_ENV: test
+      SECRET_KEY: test
+      JWT_SECRET_KEY: test
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_NAME: allocar
+      DB_USER: allocar
+      DB_PASSWORD: allocar
+      SQLALCHEMY_DATABASE_URI: postgresql+psycopg2://allocar:allocar@localhost:5432/allocar
+      REDIS_URL: redis://localhost:6379/0
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install -r requirements.txt
+      - run: pip install pytest
+      - run: |
+          export FLASK_APP=app.py
+          flask db upgrade
+      - run: pytest -q
